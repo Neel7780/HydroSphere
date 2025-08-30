@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import * as HydrobotController from "@/src/controllers/hydrobotController";
+import * as HydrobotController from "@/controllers/hydrobotController";
 
 export async function POST(req: NextRequest) {
   try {

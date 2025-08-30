@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import * as SimulationController from "@/controllers/simulationController";
+import { SimulationController } from "@/controllers/simulationController";
 
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const data = await SimulationController.getSimulation(params.id);
-    return NextResponse.json(data);
+    // Attach the id to the request URL for the controller
+    req.nextUrl.pathname = `/api/simulation/${params.id}`;
+    return await SimulationController.getSimulation(req);
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
