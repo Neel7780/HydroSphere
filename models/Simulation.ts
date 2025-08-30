@@ -397,17 +397,40 @@ export class Simulation {
         };
       });
       
-      return {
+    interface CityComparison {
+        city: string;
+        simulation_rank: number;
+        default_rank: number | null;
+        rank_change: number | null;
+        weighted_score: number;
+        default_score: number | null;
+        score_difference: number | null;
+        movement_type: string;
+    }
+
+    interface ComparisonSummary {
+        new_entries: number;
+        significant_moves: number;
+        average_rank_change: number;
+    }
+
+    interface ComparisonResult {
+        comparison: CityComparison[];
+        summary: ComparisonSummary;
+    }
+
+    return {
         comparison,
         summary: {
-          new_entries: comparison.filter(c => c.default_rank === null || c.default_rank > 20).length,
-          significant_moves: comparison.filter(c => c.rank_change && Math.abs(c.rank_change) >= 5).length,
-          average_rank_change: comparison
-            .filter(c => c.rank_change !== null)
-            .reduce((sum, c) => sum + (c.rank_change || 0), 0) / 
-            comparison.filter(c => c.rank_change !== null).length || 0
+            new_entries: comparison.filter((c: CityComparison) => c.default_rank === null || c.default_rank > 20).length,
+            significant_moves: comparison.filter((c: CityComparison) => c.rank_change && Math.abs(c.rank_change) >= 5).length,
+            average_rank_change:
+                comparison
+                    .filter((c: CityComparison) => c.rank_change !== null)
+                    .reduce((sum: number, c: CityComparison) => sum + (c.rank_change || 0), 0) /
+                comparison.filter((c: CityComparison) => c.rank_change !== null).length || 0
         }
-      };
+    } as ComparisonResult;
     } catch (error) {
       console.error('Error comparing with baseline:', error);
       throw new Error('Failed to compare with baseline');

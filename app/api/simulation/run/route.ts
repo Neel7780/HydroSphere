@@ -1,12 +1,15 @@
-import { NextRequest, NextResponse } from "next/server";
-import * as SimulationController from "@/controllers/simulationController";
+import { NextApiRequest, NextApiResponse } from 'next';
+import { SimulationController } from '@/controllers/simulationController';
 
-export async function POST(req: NextRequest) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const body = await req.json();
-    const data = await SimulationController.runSimulation(body);
-    return NextResponse.json(data);
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    if (req.method === 'POST') {
+      await SimulationController.runSimulation(req, res);
+    } else {
+      res.status(405).json({ error: 'Method Not Allowed' });
+    }
+  } catch (error) {
+    console.error('Error in run simulation route:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 }
