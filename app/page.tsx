@@ -6,17 +6,24 @@ export default function HomePage() {
       <header className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0 -z-10">
           {/* decorative hero image; text is baked in the image */}
-          <img src="/images/hydrosphere-hero.png" alt="" className="h-full w-full object-cover mb-44" />
+          <img src="/images/hydrosphere-hero.png" alt="HydroSphere Hero" className="h-full w-full object-cover" />
         </div>
-       
+        
+        {/* Content overlay */}
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+            Welcome to HydroSphere
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 drop-shadow-lg max-w-2xl px-6">
+            Explore renewable energy mapping, city rankings, and scenario simulation
+          </p>
+        </div>
 
-        {/* spacer to give vertical height while keeping it minimal */}
-        <div className="mx-auto max-w-5xl px-6 py-24 md:py-32" />
         {/* subtle scroll affordance to jump to features */}
         <div className="pointer-events-auto absolute bottom-6 left-0 right-0 flex justify-center">
           <a
             href="#features"
-            className="rounded-full border border-foreground/20 bg-background/60 px-3 py-3 mb-44 text-sm text-foreground/80 backdrop-blur hover:text-foreground"
+            className="rounded-full border border-white/30 bg-black/20 px-4 py-3 text-sm text-white backdrop-blur hover:bg-black/30 transition-colors"
           >
             Explore features
           </a>
