@@ -1,7 +1,6 @@
 // app/api/cities/[id]/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import City from "@/models/City";
-import { pool } from "@/lib/database";
+import { supabase } from "@/lib/supabase";
 
 export async function GET(
   request: NextRequest,
@@ -17,8 +16,20 @@ export async function GET(
       );
     }
 
-    const cityDetails = await City.findById(cityId);
-    if (!cityDetails) {
+    // Get city details with Supabase
+    const { data: city, error } = await supabase
+      .from('cities')
+      .select(`
+        *,
+        renewable_data (*),
+        water_resources (*),
+        industrial_data (*),
+        logistics_data (*)
+      `)
+      .eq('id', cityId)
+      .single();
+
+    if (error || !city) {
       return NextResponse.json(
         { success: false, error: "City not found" },
         { status: 404 }
@@ -27,7 +38,7 @@ export async function GET(
 
     return NextResponse.json({
       success: true,
-      city: cityDetails,
+      city: city,
     });
   } catch (error) {
     console.error("Error in getCityDetails:", error);

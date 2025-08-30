@@ -12,7 +12,6 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "HydroSphere",
   description: "HydroSphere — Minimal, clean landing with features.",
-  generator: "v0.app",
 }
 
 export default function RootLayout({
