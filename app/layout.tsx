@@ -3,15 +3,15 @@ import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
-import { ChatbotWidget } from "@/components/chatbot-widget"
-import { Suspense } from "react"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
 import "./globals.css"
+import "../src/index.css"
+import Providers from "./providers"
+import { Suspense } from "react"
 
 export const metadata: Metadata = {
-  title: "HydroSphere",
-  description: "HydroSphere — Minimal, clean landing with features.",
+  title: "v0 App",
+  description: "Created with v0",
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -20,16 +20,19 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={`min-h-screen font-sans ${GeistSans.variable} ${GeistMono.variable}`}
-        style={{ backgroundColor: "#d5f4f9" }}
-      >
-        <SiteHeader />
+    <html lang="en">
+      <head>
+        <style>{`
+html {
+  font-family: ${GeistSans.style.fontFamily};
+  --font-sans: ${GeistSans.variable};
+  --font-mono: ${GeistMono.variable};
+}
+        `}</style>
+      </head>
+      <body>
         <Suspense fallback={null}>
-          {children}
-          <SiteFooter />
-          <ChatbotWidget />
+          <Providers>{children}</Providers>
         </Suspense>
         <Analytics />
       </body>

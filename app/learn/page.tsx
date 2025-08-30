@@ -1,4 +1,7 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Navigation } from "@/components/Navigation"
 
 const modules = [
   { id: "basics", title: "Basics", desc: "Foundations of clean energy and location factors." },
@@ -10,7 +13,9 @@ const modules = [
 
 export default function LearnPage() {
   return (
-    <main className="mx-auto max-w-5xl space-y-6 p-6">
+    <>
+      <Navigation />
+      <main className="mx-auto max-w-5xl space-y-6 p-6 pt-24">
       <header className="space-y-1">
         <h1 className="text-3xl font-semibold">Learn Hub</h1>
         <p className="text-muted-foreground">A structured path through essential concepts and resources.</p>
@@ -34,6 +39,7 @@ export default function LearnPage() {
           </Card>
         ))}
       </div>
-    </main>
+      </main>
+    </>
   )
 }

@@ -5,6 +5,7 @@ import { useAppStore } from "@/store/app-store"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
+import { Navigation } from "@/components/Navigation"
 
 type City = {
   id: string
@@ -35,7 +36,9 @@ export default function SimulatePage() {
   }, [weights])
 
   return (
-    <main className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 md:grid-cols-2">
+    <>
+      <Navigation />
+      <main className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 pt-24 md:grid-cols-2">
       <Card>
         <CardHeader>
           <CardTitle>Weights</CardTitle>
@@ -73,7 +76,8 @@ export default function SimulatePage() {
             ))}
         </CardContent>
       </Card>
-    </main>
+      </main>
+    </>
   )
 }
 
