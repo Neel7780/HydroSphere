@@ -5,11 +5,10 @@ export default function HomePage() {
     <main>
       <header className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          {/* decorative hero image; text is baked in the image */}
           <img src="/images/hydrosphere-hero.png" alt="HydroSphere Hero" className="h-full w-full object-cover" />
         </div>
         
-        {/* Content overlay */}
+        {/* Content overlay
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
             Welcome to HydroSphere
@@ -17,7 +16,7 @@ export default function HomePage() {
           <p className="text-xl md:text-2xl mb-8 drop-shadow-lg max-w-2xl px-6">
             Explore renewable energy mapping, city rankings, and scenario simulation
           </p>
-        </div>
+        </div> */}
 
         {/* subtle scroll affordance to jump to features */}
         <div className="pointer-events-auto absolute bottom-6 left-0 right-0 flex justify-center">
