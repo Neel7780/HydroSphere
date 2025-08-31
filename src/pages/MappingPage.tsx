@@ -2,7 +2,7 @@
 
 import { Navigation } from "@/components/Navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { MapView } from "@/components/map-view"
+import { InteractiveMap } from "@/components/InteractiveMap"
 import { AnimatedBackground } from "@/src/components/ui/animated-background"
 
 export default function MappingPage() {
@@ -32,7 +32,7 @@ export default function MappingPage() {
           </Card>
 
           <div className="bg-card/80 backdrop-blur-md border border-primary/20 rounded-lg p-4">
-            <MapView />
+            <InteractiveMap />
           </div>
         </main>
       </AnimatedBackground>

@@ -8,7 +8,7 @@ export const HydrosphereLanding = () => {
   const router = useRouter()
 
   const handleVisit = () => {
-    router.push("/hydrogen")
+    router.push("/chatbot")
   }
 
   return (

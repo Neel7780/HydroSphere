@@ -59,6 +59,7 @@
     "eslint-plugin-react-hooks": "latest",
     "eslint-plugin-react-refresh": "latest",
     "express": "^4.19.2",
+    "framer-motion": "^12.23.12",
     "geist": "latest",
     "globals": "latest",
     "groq-sdk": "^0.30.0",

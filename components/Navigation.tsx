@@ -29,7 +29,7 @@ export const Navigation = () => {
     {
       icon: <Play className="w-5 h-5" />,
       label: "Simulate",
-      path: "/simulate",
+      path: "/simulator",
       description: "Run simulations and scenarios"
     },
     {

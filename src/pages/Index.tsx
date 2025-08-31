@@ -1,7 +1,7 @@
-"use client"
-
 import { HydrosphereLanding } from "@/src/components/HydrosphereLanding"
 
-export default function Index() {
+const Index = () => {
   return <HydrosphereLanding />
-} 
+}
+
+export default Index 
