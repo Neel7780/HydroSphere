@@ -47,16 +47,6 @@ export const HydrogenContent = () => {
     <AnimatedBackground className="min-h-screen">
       <div className="container mx-auto px-6 py-12">
         {/* Header */}
-        <div className="flex items-center justify-between mb-12">
-          <Button
-            variant="ghost"
-            onClick={() => router.push("/")}
-            className="text-foreground hover:text-primary hover:bg-primary/10 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Hydrosphere
-          </Button>
-        </div>
 
         {/* Hero Section */}
         <div className="text-center mb-16 animate-fade-in">

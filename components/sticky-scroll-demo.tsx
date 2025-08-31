@@ -11,7 +11,7 @@ const createFeatureContent = (router: any) => [
       "Comprehensive mapping platform that visualizes renewable capacity, water resources, industrial demand clusters, and logistics networks. Features intelligent highlighting of the top 5 cities identified through advanced scoring algorithms, with clickable markers leading to detailed city profiles.",
     content: (
       <button 
-        onClick={() => router.push('/mapping')}
+        onClick={() => router.push('/map')}
         className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary via-primary/80 to-secondary text-primary-foreground rounded-2xl relative overflow-hidden group hover:scale-105 transition-all duration-300 cursor-pointer border-0 outline-none focus:ring-2 focus:ring-primary/50"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
@@ -70,7 +70,7 @@ const createFeatureContent = (router: any) => [
       >
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
         <div className="relative z-10 flex flex-col items-center space-y-4">
-          <BarChart3 className="w-16 h-16 animate-spin group-hover:animate-pulse" />
+          <BarChart3 className="w-16 h-16 group-hover:animate-pulse" />
           <span className="text-2xl font-bold text-center">Optimization Dashboard</span>
           <p className="text-sm text-center opacity-90 max-w-xs">Dynamic filtering and ranking system</p>
         </div>

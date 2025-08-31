@@ -5,7 +5,7 @@ import { Github, Twitter, Linkedin, Mail, Globe, Zap, Users, Code } from "lucide
 
 export function Footer() {
   return (
-    <footer className="relative w-full bg-black/50 backdrop-blur-sm border-t border-green-400/60 mt-20" style={{
+    <footer className="relative w-full bg-white/50 border-t border-green-400/60 mt-20" style={{
       boxShadow: '0 0 120px rgba(34, 197, 94, 0.4), 0 0 80px rgba(34, 197, 94, 0.25), 0 0 40px rgba(34, 197, 94, 0.15), inset 0 2px 0 rgba(34, 197, 94, 0.5)',
       background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(8, 110, 52, 0.3) 30%, rgba(34, 197, 94, 0.2) 50%, rgba(8, 110, 52, 0.3) 70%, rgba(0, 0, 0, 0.7) 100%)'
     }}>

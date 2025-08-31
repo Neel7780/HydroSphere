@@ -56,8 +56,7 @@ export default function ContentPage() {
             onClick={() => router.push("/")}
             className="text-foreground hover:text-primary hover:bg-primary/10 transition-colors"
           >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Hydrosphere
+            
           </Button>
         </div>
 
